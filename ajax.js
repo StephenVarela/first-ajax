@@ -18,6 +18,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }).then(function (response) {
       console.log(response.data)
       pingPongAJAX.parentElement.append(response.data);
+    }).catch(function (error) {
+      console.log(error)
+      pingPongAJAX.parentElement.append('Oops I did it again, I played with your heart... got lost in the game');
+    }).then(function(){
+      console.log('Hey the request finished!');
     });
   });
 
