@@ -40,6 +40,21 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   })
 
+  var requestTotTime = document.getElementById('RequestToTime');
+  var section8 = document.getElementById('step8');
+
+  requestTotTime.addEventListener('click', function(e){
+    console.log('clicked request tot time');
+    axios({
+      "url": 'http://intro-ajax-api.herokuapp.com/time',
+      "dataType": 'text',
+      params: {timezone: 'Europe/Sofia'}
+    }).then(function(response){
+      console.log(response);
+      section8.append(response.data);
+    })
+  });
+
 
 
 });
