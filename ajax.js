@@ -26,6 +26,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
+  var countAJAXButton = document.getElementById('AJAXtoCount');
+
+  var section7 = document.getElementById('step7');
+
+  countAJAXButton.addEventListener('click', function(e){
+    console.log('AJAX Count ');
+    axios({
+      "url": 'http://intro-ajax-api.herokuapp.com/count',
+      "dataType": 'text'
+    }).then(function(response){
+      section7.append(response.data);
+    });
+  })
+
 
 
 });
