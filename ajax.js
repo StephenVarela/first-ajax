@@ -52,9 +52,25 @@ document.addEventListener("DOMContentLoaded", function() {
     }).then(function(response){
       console.log(response);
       section8.append(response.data);
-    })
+    });
   });
 
+  var requestToCar = document.getElementById('AJAXCar');
+  var section9 = document.getElementById('step9');
+
+  requestToCar.addEventListener('click', function(e){
+    console.log('clicked request for car');
+
+  var tempHTML = section9.innerHTML;
+
+    axios({
+      "url": 'http://intro-ajax-api.herokuapp.com/a_car',
+    }).then(function(response){
+      console.log(response);
+      tempHTML += response.data
+      section9.innerHTML = tempHTML;
+    });
+  });
 
 
 });
