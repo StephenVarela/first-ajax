@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   pingPongAJAX.addEventListener('click', function(e){
     axios({
-      "url": 'http://intro-ajax-api.herokuapp.com/ping',
+      "url": 'http://intro-ajax-api.herokuapp.com/pong',
       "dataType": 'text'
     }).then(function (response) {
       console.log(response.data)
